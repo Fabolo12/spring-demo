@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.dto.CostRobotsDto;
 import com.example.demo.models.Robot;
 import com.example.demo.services.RobotService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,5 +59,10 @@ public class RobotController {
     @DeleteMapping("/{id}") // /robot/{id}
     public void delete(@PathVariable String id) {
         service.delete(id);
+    }
+
+    @GetMapping("/robots-cost")
+    public CostRobotsDto robotsCost() {
+        return service.getCosts();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.dto.CostRobotsDto;
 import com.example.demo.models.Robot;
 import com.example.demo.repositories.RobotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,9 @@ public class RobotService {
 
     public Iterable<Robot> findAllWithSort() {
         return repository.findAllWithSort();
+    }
+
+    public CostRobotsDto getCosts() {
+        return repository.getCosts();
     }
 }
