@@ -10,10 +10,4 @@ import org.springframework.stereotype.Repository;
 public interface RobotRepository extends JpaRepository<Robot, String> {
     @Query("SELECT r FROM Robot r ORDER BY r.name DESC")
     Iterable<Robot> findAllWithSort();
-
-    @Query() // TODO
-    @Modifying
-    void updateRobot();
-
-    Robot getFirstByNameLike(final String name);
 }
